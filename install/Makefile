@@ -17,8 +17,7 @@ dependencies:
 	@pip3 install -r requirements.txt
 
 docker-stage:
-	#docker-compose -f ct-docker-compose.yml up --build
-	@echo "Running docker-compose"
+	docker-compose -f ct-docker-compose.yml up --build
 
 manager:
 	@python3 manager.py --action $(action) --environment $(environment)

@@ -2,15 +2,15 @@
   "commercial": {
     "staging": {
       "host": "notary-signer.staging.cloudtrust.rocks",
-      "server_image": "",
-      "signer_image": "",
-      "db_image": ""
+      "server_image": "ct-docker.artifacts.cloudtrust.rocks/ct-notary-server:0.0.1",
+      "signer_image": "ct-docker.artifacts.cloudtrust.rocks/ct-notary-signer:0.0.1",
+      "db_image": "ct-docker.artifacts.cloudtrust.rocks/ct-notary-signerdb:0.0.1"
     },
     "prod": {
       "host": "notary-signer.prod.cloudtrust.rocks",
-      "server_image": "",
-      "signer_image": "",
-      "db_image": ""
+      "server_image": "ct-docker.artifacts.cloudtrust.rocks/ct-notary-server:0.0.1",
+      "signer_image": "ct-docker.artifacts.cloudtrust.rocks/ct-notary-signer:0.0.1",
+      "db_image": "ct-docker.artifacts.cloudtrust.rocks/ct-notary-signerdb:0.0.1"
     }
   },
   "fedramp": {
@@ -22,9 +22,9 @@
     },
     "prod": {
       "host": "notary-signer.prod.informaticagovcloud.com",
-      "server_image": "",
-      "signer_image": "",
-      "db_image": ""
+      "server_image": "612675333278.dkr.ecr.us-gov-east-1.amazonaws.com/infrastructure-dev-notary/ct-notary-server:0.0.1",
+      "signer_image": "612675333278.dkr.ecr.us-gov-east-1.amazonaws.com/infrastructure-dev-notary/ct-notary-signer:0.0.1",
+      "db_image": "612675333278.dkr.ecr.us-gov-east-1.amazonaws.com/infrastructure-dev-notary/ct-notary-signerdb:0.0.1"
     }
   }
 }

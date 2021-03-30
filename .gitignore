@@ -15,3 +15,5 @@ cross
 *.test
 coverage*.txt
 gosec_output.csv
+/install/ct-docker-compose.yml
+/install/data/config/server-config.json
