@@ -1,0 +1,45 @@
+version: "2"
+services:
+  server:
+    image: server.Dockerfile
+    networks:
+      - mdb
+      - sig
+    ports:
+      - "8080"
+      - "443:4443"
+    entrypoint: /usr/bin/env sh
+    command: -c "./migrations/migrate.sh && notary-server -config=fixtures/ct-server-config.json"
+    depends_on:
+      - mysql
+      - signer
+  signer:
+    image: signer.Dockerfile
+    networks:
+      mdb:
+      sig:
+        aliases:
+          - notary-signer.staging.cloudtrust.rocks
+    entrypoint: /usr/bin/env sh
+    command: -c "./migrations/migrate.sh && notary-signer -config=fixtures/ct-signer-config.json"
+    depends_on:
+      - mysql
+  mysql:
+    networks:
+      - mdb
+    volumes:
+      - ./notarysql/mysql-initdb.d:/docker-entrypoint-initdb.d
+      - notary_data:/var/lib/mysql
+    image: mariadb:10.4
+    environment:
+      - TERM=dumb
+      - MYSQL_ALLOW_EMPTY_PASSWORD="true"
+    command: mysqld --innodb_file_per_table
+volumes:
+  notary_data:
+    external: false
+networks:
+  mdb:
+    external: false
+  sig:
+    external: false
