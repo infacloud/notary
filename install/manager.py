@@ -37,7 +37,7 @@ class NotaryManager:
     def modify_notary_yaml(self, notary_json):
         if notary_json:
             try:
-                file = "../src/ct-docker-compose.yml"
+                file = "../ct-docker-compose.yml"
                 with open(file) as fp:
                     data = ruamel.yaml.load(fp,  ruamel.yaml.RoundTripLoader)
                 fp.close()
