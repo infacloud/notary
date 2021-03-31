@@ -9,7 +9,7 @@ services:
       - "8080"
       - "443:4443"
     entrypoint: /usr/bin/env sh
-    command: -c "../migrations/migrate.sh && notary-server -config=fixtures/ct-server-config.json"
+    command: -c "./migrations/migrate.sh && notary-server -config=fixtures/ct-server-config.json"
     depends_on:
       - mysql
       - signer
@@ -21,7 +21,7 @@ services:
         aliases:
           - notary-signer.staging.cloudtrust.rocks
     entrypoint: /usr/bin/env sh
-    command: -c "../migrations/migrate.sh && notary-signer -config=fixtures/ct-signer-config.json"
+    command: -c "./migrations/migrate.sh && notary-signer -config=fixtures/ct-signer-config.json"
     depends_on:
       - mysql
   mysql:
