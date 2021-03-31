@@ -2,8 +2,8 @@ all:
 	@make help
 
 help:
-	@echo "Usage : Run make using below stages"
-	@echo "make build-fedramp-staging\nmake build-fedramp-prod\nmake build-commercial-staging\nmake build-commercial-prod"
+	@echo -e "Usage : Run make using below stages"
+	@echo -e "make build-fedramp-staging\nmake build-fedramp-prod\nmake build-commercial-staging\nmake build-commercial-prod"
 
 clean:
 ifneq ($(wildcard ./ct-docker-compose.yml),)
