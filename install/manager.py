@@ -37,7 +37,7 @@ class NotaryManager:
     def modify_notary_yaml(self, notary_json):
         if notary_json:
             try:
-                file = "../ct-docker-compose.yml"
+                file = "../template-ct-docker-compose.yml"
                 with open(file) as fp:
                     data = ruamel.yaml.load(fp,  ruamel.yaml.RoundTripLoader)
                 fp.close()
@@ -45,7 +45,7 @@ class NotaryManager:
                 data['services']['signer']['image'] = notary_json['signer_image']
                 data['services']['mysql']['image'] = notary_json['db_image']
                 data['services']['signer']['networks']['sig']['aliases'][0] = notary_json['host']
-                with open('ct-docker-compose.yml','w') as fp:
+                with open('../ct-docker-compose.yml','w') as fp:
                     ruamel.yaml.dump(data, fp, Dumper=ruamel.yaml.RoundTripDumper)
                 fp.close()
             except Exception as ex:

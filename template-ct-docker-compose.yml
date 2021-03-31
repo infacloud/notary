@@ -28,7 +28,7 @@ services:
     networks:
       - mdb
     volumes:
-      - ../notarysql/mysql-initdb.d:/docker-entrypoint-initdb.d
+      - ./notarysql/mysql-initdb.d:/docker-entrypoint-initdb.d
       - notary_data:/var/lib/mysql
     image: mariadb:10.4
     environment:
