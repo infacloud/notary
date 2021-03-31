@@ -13,6 +13,16 @@ else
 	@echo "No files to clean."
 endif
 
+os-dependencies:
+	yum update -y
+	yum install -y yum-utils
+	amazon-linux-extras install docker python3 -y
+	service docker start
+	curl -L https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose
+	curl -L https://github.com/theupdateframework/notary/releases/download/v0.6.1/notary-Linux-amd64 -o /usr/local/bin/notary
+	chmod +x /usr/local/bin/notary
+	chmod +x /usr/local/bin/docker-compose
+
 dependencies:
 	@pip3 install -r requirements.txt
 
