@@ -1,9 +1,9 @@
 {
   "server": {
     "grpc_addr": ":7899",
-    "tls_cert_file": "../certs/signer.crt",
-    "tls_key_file": "../certs/signer.key",
-    "client_ca_file": "../certs/server.crt"
+    "tls_cert_file": "/certs/signer.crt",
+    "tls_key_file": "/certs/signer.key",
+    "client_ca_file": "/certs/server.crt"
   },
   "logging": {
     "level": "debug"

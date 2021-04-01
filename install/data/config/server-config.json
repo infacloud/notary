@@ -1,17 +1,17 @@
 {
   "server": {
     "http_addr": ":4443",
-    "tls_key_file": "../certs/server.key",
-    "tls_cert_file": "../certs/server.crt"
+    "tls_key_file": "/certs/server.key",
+    "tls_cert_file": "/certs/server.crt"
   },
   "trust_service": {
     "type": "remote",
     "hostname": "notary-signer.staging.informaticagovcloud.com",
     "port": "7899",
-    "tls_ca_file": "../certs/ca.crt",
+    "tls_ca_file": "/certs/ca.crt",
     "key_algorithm": "ecdsa",
-    "tls_client_cert": "../certs/server.crt",
-    "tls_client_key": "../certs/server.key"
+    "tls_client_cert": "/certs/server.crt",
+    "tls_client_key": "/certs/server.key"
   },
   "logging": {
     "level": "debug"
