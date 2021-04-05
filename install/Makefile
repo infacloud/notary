@@ -28,6 +28,7 @@ dependencies:
 
 docker-stage:
 	docker-compose -f ../ct-docker-compose.yml up -d --build
+	docker-compose logs mysql signer server
 
 manager:
 	@python3 manager.py --action $(action) --environment $(environment)
