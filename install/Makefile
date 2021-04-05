@@ -14,13 +14,13 @@ else
 endif
 
 os-dependencies:
-	curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64" -o /usr/local/bin/docker-compose
+	#curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64" -o /usr/local/bin/docker-compose
 	curl -L "https://github.com/theupdateframework/notary/releases/download/v0.6.1/notary-Linux-amd64" -o /usr/local/bin/notary
 	chmod +x /usr/local/bin/notary
-	chmod +x /usr/local/bin/docker-compose
+	#chmod +x /usr/local/bin/docker-compose
 	yum update -y
-	yum install -y yum-utils
-	amazon-linux-extras install docker python3 -y
+	yum install -y yum-utils docker-ce docker-compose
+	#amazon-linux-extras install docker python3 -y
 	service docker start
 
 dependencies:
