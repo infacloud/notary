@@ -37,12 +37,14 @@ build-commercial-staging:
 	@echo "Building the docker-compose.yml file for commercial  staging environment!"
 	@make dependencies
 	@make action=build_commerical environment=staging manager
+	docker login ct-docker.artifacts.cloudtrust.rocks --username ctci-readbot --password $JFROG_PASSWORD
 	@make docker-stage
 
 build-commercial-prod:
 	@echo "Building the docker-compose.yml file for commercial prod environment!"
 	@make dependencies
 	@make action=build_commerical environment=prod manager
+	docker login ct-docker.artifacts.cloudtrust.rocks --username ctci-readbot --password $JFROG_PASSWORD
 	@make docker-stage
 
 build-fedramp-prod:
