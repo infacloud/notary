@@ -19,7 +19,7 @@ os-dependencies:
 	chmod +x /usr/local/bin/notary
 	#chmod +x /usr/local/bin/docker-compose
 	yum update -y
-	yum install -y yum-utils docker-ce docker-compose
+	yum install -y yum-utils docker-ce docker-compose telnet
 	#amazon-linux-extras install docker python3 -y
 	service docker start
 
