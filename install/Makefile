@@ -49,10 +49,12 @@ build-fedramp-prod:
 	@echo "Building the docker-compose.yml file for fedramp prod environment!"
 	@make dependencies
 	@make action=build_fedramp environment=prod manager
+	aws ecr get-login-password --region us-gov-east-1 | docker login --username AWS --password-stdin 225142825397.dkr.ecr.us-gov-east-1.amazonaws.com
 	@make docker-stage
 
 build-fedramp-staging:
 	@echo "Building the docker-compose.yml file for fedramp prod environment!"
 	@make dependencies
 	@make action=build_fedramp environment=staging manager
+	aws ecr get-login-password --region us-gov-east-1 | docker login --username AWS --password-stdin 612675333278.dkr.ecr.us-gov-east-1.amazonaws.com
 	@make docker-stage
